@@ -18,7 +18,7 @@ public class Task1 {
 		String currentString = "";
 		String result = "";
 		boolean added = false;
-		if (n > words.length) return "can't create essay with this parameters";
+		if (n > words.length) return "Нельзя создать эссе с данными параметрами";
 		for (int i = 0; i < words.length; i++) {
 			String word = words[i];
 			if (currentString.replace(" ", "").length() + word.length() <= k) currentString += word + " ";
@@ -41,7 +41,7 @@ import java.util.*;
 public class Task2 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.printf("String: ");
+		System.out.printf("Строка: ");
 		String text = input.nextLine();
 		System.out.println(balance(text));
 	}
@@ -75,7 +75,7 @@ import java.util.*;
 public class Task3 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.printf("String: ");
+		System.out.printf("Строка: ");
 		String text = input.nextLine();
 		if (text.indexOf("_") != -1) {
 			System.out.printf("toCamelCase: %s\n", toCamelCase(text));
@@ -120,13 +120,13 @@ import java.util.*;
 public class Task4 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.printf("Start: ");
+		System.out.printf("Начало: ");
 		double start = Double.parseDouble(input.nextLine());
-		System.out.printf("End: ");
+		System.out.printf("Конец: ");
 		double end = Double.parseDouble(input.nextLine());
-		System.out.printf("Salary: ");
+		System.out.printf("Зарплата: ");
 		double salary = Double.parseDouble(input.nextLine());
-		System.out.printf("Salary for overtime: ");
+		System.out.printf("Сверхурочная зарплата: ");
 		double overtimeSalary = Double.parseDouble(input.nextLine());
 		System.out.println(overtime(start, end, salary, overtimeSalary));
 	}
@@ -145,9 +145,9 @@ import java.util.*;
 public class Task5 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.printf("Mass: ");
+		System.out.printf("Масса: ");
 		String m = input.nextLine();
-		System.out.printf("Height: ");
+		System.out.printf("Вес: ");
 		String h = input.nextLine();
 		System.out.println(BMI(m, h));
 	}
@@ -156,10 +156,10 @@ public class Task5 {
 		double mass = 0;
 		double height = 0;
 		Map<String, Double> metrics = new HashMap<String, Double>();
-		metrics.put("pounds", 2.205);
-		metrics.put("kilos", 1.0);
-		metrics.put("inches", 39.37);
-		metrics.put("meters", 1.0);
+		metrics.put("Фунты", 2.205);
+		metrics.put("Кило", 1.0);
+		metrics.put("Дюймы", 39.37);
+		metrics.put("Метры", 1.0);
 		for (Map.Entry<String,Double> entry: metrics.entrySet()) {
 			if (m.indexOf(entry.getKey()) != -1) {
 				mass = Double.parseDouble(m.replace(entry.getKey(), "").trim()) / entry.getValue();
@@ -169,9 +169,9 @@ public class Task5 {
 			}
 		}
 		double res = mass / Math.pow(height, 2);
-		if (res < 18.5) return String.format("%.1f", res) + " Underweight";
-		else if (res >= 18.5 && res < 24.9) return String.format("%.1f", res) + " Normal weight";
-		return String.format("%.1f", res) + " Overweight";
+		if (res < 18.5) return String.format("%.1f", res) + " Недовес";
+		else if (res >= 18.5 && res < 24.9) return String.format("%.1f", res) + " Нормальный вес";
+		return String.format("%.1f", res) + " Перевес";
 	}
 }
 
@@ -182,7 +182,7 @@ import java.util.*;
 public class Task6 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.printf("Number: ");
+		System.out.printf("Номер: ");
 		Integer number = Integer.parseInt(input.nextLine());
 		System.out.println(bugger(number));
 	}
@@ -210,7 +210,7 @@ import java.util.*;
 public class Task7 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.printf("Input: ");
+		System.out.printf("Вход: ");
 		String string = input.nextLine();
 		System.out.println(toStarShorthand(string));
 	}
@@ -243,9 +243,9 @@ import java.util.regex.Pattern;
 public class Task8 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.printf("First string: ");
+		System.out.printf("Первая строка: ");
 		String first = input.nextLine();
-		System.out.printf("Second string: ");
+		System.out.printf("Вторая строка: ");
 		String second = input.nextLine();
 		System.out.println(doesRhyme(first, second));
 	}
@@ -277,7 +277,7 @@ public class Task8 {
 				}
 			}
 		}
-		System.out.printf("First: %s, Second: %s\n", first, second);
+		System.out.printf("Первое: %s, Второе: %s\n", first, second);
 		return equal;
 	}
 }
@@ -289,9 +289,9 @@ import java.util.*;
 public class Task9 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.printf("First number: ");
+		System.out.printf("Первый номер: ");
 		String num1 = input.nextLine();
-		System.out.printf("Second number: ");
+		System.out.printf("Второй номер: ");
 		String num2 = input.nextLine();
 		System.out.println(trouble(num1, num2));
 	}
@@ -324,9 +324,9 @@ import java.util.*;
 public class Task10 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		System.out.printf("String: ");
+		System.out.printf("Строка: ");
 		String string = input.nextLine();
-		System.out.printf("Book end: ");
+		System.out.printf("Конец книги: ");
 		Character bookend = input.nextLine().charAt(0);
 		System.out.println(unique(string, bookend));
 	}
